@@ -1,9 +1,15 @@
-import { useState } from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import DayOne from "./routes/1";
 
 function App() {
   return (
-    <div className="min-h-screen bg-red-500"></div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DayOne />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
